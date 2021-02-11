@@ -1,10 +1,11 @@
 function [delay_map] = delay_map(N,elementos,centro,element_pitch,dy)
 %%% Cálculo do mapa de atraso de um transdutor linear
-%delay_map(Y, N, centro, pitch, mod).
-%Y: profundidade da imagem.
-%N número de elementos piezoelétricos do transdutor linear.
+%delay_map(N, centro, pitch, dy).
+%N: profundidade da imagem em numero de pontos.
+%elementos: número de elementos piezoelétricos do transdutor linear.
 %centro: posição do elemento piezoeletrico central (elemento de interesse).
-%pitch: distância em mm entre dois elementos piezoelétricos.
+%element_pitch: distância em mm entre dois elementos piezoelétricos.
+%dy: distância axial entre dois pontos da imagem
 %Autor: J. H. Uliana
 
 %% Pré-alocação do mapa de atraso
