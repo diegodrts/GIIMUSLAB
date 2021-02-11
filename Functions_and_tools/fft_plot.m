@@ -1,5 +1,10 @@
 function [P1 f] = fft_plot(data, Fs, type)
 
+%fft_plot(data, Fs,type') calcula e mostra o gráfico do espectro de potência de um sinal unidimensional
+%data: dados do sinal
+%Fs: frequência de amostragem
+%type: mostra o gráfico em hetz (sting: 'Hz'), quilohertz (string: 'kHz') ou megahertz (string: 'MHz')
+
 T = 1/Fs;             % Sampling period       
 L = length(data);     % Length of signal
 t = (0:L-1)*T;        % Time vector
