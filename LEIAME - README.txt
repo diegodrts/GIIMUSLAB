@@ -15,7 +15,7 @@ Agora as funções e ferramentas podem ser utilizada sem que as arquivos estejam
 
 -----------------------------------------------Instructions-----------------------------------------------------
 
-For better use of functions and tool, copy the folder "Function and tools" and paste to the "toolbox" folder of MATLAB
+For better use of functions and tools, copy the folder "Function and tools" and paste to the "toolbox" folder of MATLAB
 
 Instalation folder\MATLAB\toolbox
 
