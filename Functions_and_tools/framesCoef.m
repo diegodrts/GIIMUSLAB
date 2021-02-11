@@ -14,7 +14,7 @@ function [coef_map, header] = framesCoef(rfdata, header, roi)
 %
 %
 
-agonia = waitbar(0,'RAM: Coeficiente de correlação - VMA Framework');
+agonia = waitbar(0,'RAM: Coeficiente de correlaÃ§Ã£o - VMA Framework');
 
 
 % region of interest
