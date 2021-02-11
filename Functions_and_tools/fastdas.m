@@ -1,19 +1,19 @@
 function imagem_das = fastdas(imagem, element_pitch, tamanho, dy,janelamento,mapa_delay)
-%%%%O seguinte script calcula o atraso e soma de imagens Pulso-Eco ou Fotoacústicas adquiridas utilizando single channel.
+%%%%O seguinte script calcula o atraso e soma de imagens Pulso-Eco ou FotoacÃºsticas adquiridas utilizando single channel.
 %Autor: J. H. Uliana
 %fastdas(A, pitch, N, modalidade, janelamento)
-%A: imagem (fotoacústica ou Pulso-Eco)
+%A: imagem (fotoacÃºstica ou Pulso-Eco)
 %pitch: distancia entre cada elemento piezoeletrico do transdutor
-%N: número de elementos a serem somados
-%dy: resolução axial (mm)
-%modalidade: PE pulso eco e PA fotoacústica
-%janelamento: tipo de janela usada na apodização
+%N: nÃºmero de elementos a serem somados
+%dy: resoluÃ§Ã£o axial (mm)
+%modalidade: PE pulso eco e PA fotoacÃºstica
+%janelamento: tipo de janela usada na apodizaÃ§Ã£o
 
 elementos = size(imagem,2);     %Nx
 h = size(imagem,1);             %Ny
-profundidade = round(h*dy);     %Cálculo da profundidade (PA)
+profundidade = round(h*dy);     %CÃ¡lculo da profundidade (PA)
 
-switch janelamento              %Janelamento da apodização
+switch janelamento              %Janelamento da apodizaÃ§Ã£o
     case 'hanning'
         janela = hann(tamanho+1);
     case 'none'
@@ -30,7 +30,7 @@ end
 for x = 1:elementos                                                                                     %varredura nas linhas
     
     %%ZONA CENTRAL
-    if (x>fix(tamanho/2)&& x+fix(tamanho/2)<elementos)                                                  %zona em que a soma e atraso não é afetada pelas bordas (esquerda e direta) da imagem
+    if (x>fix(tamanho/2)&& x+fix(tamanho/2)<elementos)                                                  %zona em que a soma e atraso nÃ£o Ã© afetada pelas bordas (esquerda e direta) da imagem
         for y = 1:h                                                                                     %varredura na profundidade
             soma_delay =0;
             for i = x-fix(tamanho/2):x+fix(tamanho/2)-1                                                 %varredura em N
@@ -40,7 +40,7 @@ for x = 1:elementos                                                             
                     soma_delay = soma_delay + 0;
                 else
                     %fix(tamanho/2+1)+(i-x)
-                    soma_delay = soma_delay + janela(fix(tamanho/2+1)+(i-x))*imagem(indice_atraso,i);   %soma com apodização
+                    soma_delay = soma_delay + janela(fix(tamanho/2+1)+(i-x))*imagem(indice_atraso,i);   %soma com apodizaÃ§Ã£o
                 end
             end
             imagem_das(y,x) = soma_delay;
