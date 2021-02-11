@@ -1,17 +1,17 @@
 function imagem_das = fastdas(imagem, element_pitch, tamanho, dy,janelamento,mapa_delay)
 %%%%O seguinte script calcula o atraso e soma de imagens Pulso-Eco ou Fotoacústicas adquiridas utilizando single channel.
 %Autor: J. H. Uliana
-%fastdas(A, pitch, N, modalidade, janelamento)
-%A: imagem (fotoacústica ou Pulso-Eco)
-%pitch: distancia entre cada elemento piezoeletrico do transdutor
-%N: número de elementos a serem somados
+%fastdas(imagem, element_pitch, tamanho, dy,janelamento,mapa_delay)
+%imagem: dados de RF prebeamformed (fotoacústica ou Pulso-Eco)
+%element_pitch: distancia entre cada elemento piezoeletrico do transdutor
+%Tamanho: número de elementos a serem somados
 %dy: resolução axial (mm)
-%modalidade: PE pulso eco e PA fotoacústica
-%janelamento: tipo de janela usada na apodização
+%janelamento: tipo de janela usada na apodização (string: 'hanning','none','blackman','gauss' e 'sonix')
+%mapa_delay: mapa de atraso calculado pela função "delay_map.m"
 
 elementos = size(imagem,2);     %Nx
 h = size(imagem,1);             %Ny
-profundidade = round(h*dy);     %Cálculo da profundidade (PA)
+profundidade = round(h*dy);     %Cálculo da profundidade
 
 switch janelamento              %Janelamento da apodização
     case 'hanning'
