@@ -1,8 +1,8 @@
 function M = filtro_media(A,a,b)
-%filtro da mÈdia filtro_media(A,a,b)
+%filtro da m√©dia filtro_media(A,a,b)
 %A = imagem
-%a = tamanho axial da m·scara (valores impares)
-%b = tamanho lateral da m·scara (valores impares)
+%a = tamanho axial da m√°scara (valores impares)
+%b = tamanho lateral da m√°scara (valores impares)
 
 %valores impares;
 if mod(a,2)==0;
