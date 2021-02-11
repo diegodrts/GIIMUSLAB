@@ -14,7 +14,7 @@ function [amap, dc] = framesAcorr(rfdata, header, roi)
 %
 %
 
-agonia = waitbar(0,'RAM: Mapa de autocorrelação (1D) - VMA Framework');
+agonia = waitbar(0,'RAM: Mapa de autocorrelaÃ§Ã£o (1D) - VMA Framework');
 
 
 % region of interest
