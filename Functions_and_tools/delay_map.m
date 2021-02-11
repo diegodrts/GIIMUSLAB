@@ -1,19 +1,19 @@
 function [delay_map] = delay_map(N,elementos,centro,element_pitch,dy)
-%%% Cálculo do mapa de atraso de um transdutor linear
+%%% CÃ¡lculo do mapa de atraso de um transdutor linear
 %delay_map(Y, N, centro, pitch, mod).
 %Y: profundidade da imagem.
-%N número de elementos piezoelétricos do transdutor linear.
-%centro: posição do elemento piezoeletrico central (elemento de interesse).
-%pitch: distância em mm entre dois elementos piezoelétricos.
+%N nÃºmero de elementos piezoelÃ©tricos do transdutor linear.
+%centro: posiÃ§Ã£o do elemento piezoeletrico central (elemento de interesse).
+%pitch: distÃ¢ncia em mm entre dois elementos piezoelÃ©tricos.
 %Autor: J. H. Uliana
 
-%% Pré-alocação do mapa de atraso
+%% PrÃ©-alocaÃ§Ã£o do mapa de atraso
 delay_map = zeros(N, elementos);
 
-%% Cálculo dos atrasos
+%% CÃ¡lculo dos atrasos
 for y = 1:N                                                         %varredura na profundidade
     for x = 1:elementos                                             %varredura lateral
-        distancia = sqrt((y*dy)^2 + ((centro-x)*element_pitch)^2);  %d²=y²+x²
+        distancia = sqrt((y*dy)^2 + ((centro-x)*element_pitch)^2);  %dÂ²=yÂ²+xÂ²
         diferenca = distancia - y*dy;                               %deltad = d-y
         delay_map(y,x) = floor(diferenca/dy);
     end
