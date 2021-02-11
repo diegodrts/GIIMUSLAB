@@ -1,8 +1,8 @@
 function M = filtro_mediana(A,a,b)
 %filtro da mediana filtro_mediana(A,a,b)
 %A = imagem
-%a = tamanho axial da m·scara (valores impares)
-%b = tamanho lateral da m·scara (valores impares)
+%a = tamanho axial da m√°scara (valores impares)
+%b = tamanho lateral da m√°scara (valores impares)
 
 if mod(a,2)==0;
     a = a+1;
